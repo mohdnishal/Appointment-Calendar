@@ -1,0 +1,42 @@
+.main-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  color: #1f2937;
+  padding: 1rem;
+}
+
+.main-container.dark {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+.calendar-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 3rem; 
+}
+
+.add-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #3b82f6;
+  color: white;
+  padding: 1rem;
+  border-radius: 9999px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #2563eb;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
