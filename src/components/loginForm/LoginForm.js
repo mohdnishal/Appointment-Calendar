@@ -3,7 +3,7 @@ import {Calendar} from 'lucide-react'
 import './LoginForm.css'
 import {CREDENTIALS} from '../../data/data'
 
-function LoginForm() {
+function LoginForm({setIsAuthenticated}) {
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
     const [error,setError]=useState('')
@@ -11,6 +11,8 @@ function LoginForm() {
     const handleLogin=()=>{
         if(email===CREDENTIALS.email && password===CREDENTIALS.password)
         {
+            localStorage.setItem('login',JSON.stringify({email,password}))
+            setIsAuthenticated(true)
             setError('')
         }
         else{
