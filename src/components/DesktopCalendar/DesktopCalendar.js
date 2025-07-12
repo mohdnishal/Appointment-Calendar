@@ -34,6 +34,7 @@ function DesktopCalendar({currentDate,selectedDate,setSelectedDate,getAppointmen
               key={day.toISOString()}
               className={`calendar-cell ${!isCurrentMonth ? 'not-current-month' : ''} ${isToday ? 'today' : ''}`}
               onClick={() => {
+                if (!isCurrentMonth) return;
                 setSelectedDate(day);
                 setShowAppointmentForm(true);
               }}

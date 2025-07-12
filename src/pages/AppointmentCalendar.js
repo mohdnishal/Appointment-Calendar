@@ -65,7 +65,7 @@ useEffect(() => {
   return (
     <div className={`main-container ${darkMode ? 'dark' : ''}`}>
         <div className="calendar-wrapper">
-            <CalendarHeader darkMode={darkMode} setDarkMode={setDarkMode} filterDoctor={filterDoctor} setFilterDoctor={setFilterDoctor} filterPatient={filterPatient} setFilterPatient={setFilterPatient} />
+            <CalendarHeader darkMode={darkMode} setDarkMode={setDarkMode} filterDoctor={filterDoctor} setFilterDoctor={setFilterDoctor} filterPatient={filterPatient} setFilterPatient={setFilterPatient}setIsAuthenticated={setIsAuthenticated} />
             {!isMobile && <MonthNavigation currentDate={currentDate} setCurrentDate={setCurrentDate} darkMode={darkMode} />}
              {isMobile ? (
           <MobileCalendar
@@ -86,6 +86,7 @@ useEffect(() => {
             setShowAppointmentForm={setShowAppointmentForm}
             setEditingAppointment={setEditingAppointment}
             darkMode={darkMode}
+            
           />
         )}
         {!isMobile && (

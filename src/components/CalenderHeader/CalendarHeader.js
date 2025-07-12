@@ -3,7 +3,12 @@ import {DOCTORS,PATIENTS} from '../../data/data'
 import { Calendar, Filter, Moon, Sun } from 'lucide-react';
 import './CalendarHeader.css'
 
-function CalendarHeader({darkMode,setDarkMode,filterDoctor,setFilterDoctor,filterPatient,setFilterPatient}) {
+function CalendarHeader({darkMode,setDarkMode,filterDoctor,setFilterDoctor,filterPatient,setFilterPatient,setIsAuthenticated}) {
+    const handleLogout = () => {
+    localStorage.removeItem('login');
+    setIsAuthenticated(false);
+};
+
   return (
     <div className="calendar-header">
       <div className="header-left">
@@ -39,6 +44,13 @@ function CalendarHeader({darkMode,setDarkMode,filterDoctor,setFilterDoctor,filte
           ))}
         </select>
       </div>
+      <button
+  onClick={handleLogout}
+  className="btn-logout"
+>
+  Logout
+</button>
+
     </div>
   )
 }
